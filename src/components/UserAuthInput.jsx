@@ -11,7 +11,7 @@ const UserAuthInput = ({
     setGetEmailValidationStatus,
 }) => {
     const [value, setValue] = useState("")
-    const [showPass, setShowPass] = useState(false)
+    const [showPass, setShowPass] = useState(true)
     const [isEmailValid, setIsEmailValid] = useState(false)
 
     const handleTextChange = (e) => {
