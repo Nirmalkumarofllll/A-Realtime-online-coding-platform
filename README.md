@@ -1,8 +1,8 @@
 <h1 align="center">A Realtime Online Coding Platform</h1>
 
-> Check out My Live project: <a href="https://nk-codepen-clone.web.app/" target="_blank"> Online Coding Platform</a>
+> Check out my live project: <a href="https://nk-codepen-clone.web.app/" target="_blank"> Online Coding Platform</a>
 
-> Check out My portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/)
+> Check out my portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/)
 
 ## Login
 
@@ -25,4 +25,4 @@ The Coding page is a dynamic web development environment supporting HTML, CSS, a
 
 ![Codingpage](./imgs/Coding.png)
 
-> Learn How to do this project: [Project](https://nirmalkumarofllll.github.io/Portfolio/Codepen.html)
+> Learn how to do this project: [Project](https://nirmalkumarofllll.github.io/Portfolio/Codepen.html)
