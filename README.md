@@ -6,6 +6,14 @@
 
 > ![Loginpage](./imgs/Login.png)
 
+> Home
+
+> ![Homepage](./imgs/Home.png)
+
+> Coding Page
+
+> ![Codingpage](./imgs/Coding.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
