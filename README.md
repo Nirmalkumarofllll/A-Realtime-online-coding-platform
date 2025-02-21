@@ -1,12 +1,13 @@
-> A Realtime Online Coding Platform
+<h1 align="center">A Realtime Online Coding Platform</h1>
 
 > Check out My Live project: <a href="https://nk-codepen-clone.web.app/" target="_blank">nk-codepen-clone</a>
 
 > Check out My portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/)
 
-### `Login`
+## Login
 
-The SignUp page utilizes Firebase Authentication to manage user registration and login securely. It supports both email/password authentication and third-party sign-in options, such as Google and GitHub, ensuring flexibility and ease of access. The implementation leverages Firebase's authentication SDK to handle user credential validation, account creation, and secure session management. Additionally, error handling is integrated to provide real-time feedback on authentication failures, such as invalid credentials or locked accounts. The authentication logic is encapsulated within reusable components, promoting modularity and maintainability while ensuring a seamless user experience.
+<p align="justify"> 
+The SignUp page utilizes Firebase Authentication to manage user registration and login securely. It supports both email/password authentication and third-party sign-in options, such as Google and GitHub, ensuring flexibility and ease of access. The implementation leverages Firebase's authentication SDK to handle user credential validation, account creation, and secure session management. Additionally, error handling is integrated to provide real-time feedback on authentication failures, such as invalid credentials or locked accounts. The authentication logic is encapsulated within reusable components, promoting modularity and maintainability while ensuring a seamless user experience.</p>
 
 ![Loginpage](./imgs/Login.png)
 
@@ -16,7 +17,7 @@ The Home page is a dynamic and interactive interface designed to display saved c
 
 ![Homepage](./imgs/Home.png)
 
-# Coding Page
+## Coding Page
 
 The Coding page is a dynamic web development environment supporting HTML, CSS, and JavaScript. It features CodeMirror-powered editors with syntax highlighting, auto-completion, and real-time preview for instant feedback. The SplitPane layout allows flexible resizing, while settings menus provide quick code management options. Integrated with Firebase, it enables seamless project saving, retrieval, and favorite marking. Ideal for both beginners and advanced developers, it streamlines coding, testing, and debugging in a single interface.
 
