@@ -1,6 +1,6 @@
-> Fullstack Food App
+> A Realtime Online Coding Platform
 
-> Check out My Live project: [nk-codepen-clone](https://nk-codepen-clone.web.app/)
+> Check out My Live project: <a href="https://nk-codepen-clone.web.app/" target="_blank">nk-codepen-clone</a>
 
 > Check out My portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/)
 
