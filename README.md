@@ -1,6 +1,6 @@
 <h1 align="center">A Realtime Online Coding Platform</h1>
 
-> Check out My Live project: <a href="https://nk-codepen-clone.web.app/" target="_blank">nk-codepen-clone</a>
+> Check out My Live project: <a href="https://nk-codepen-clone.web.app/" target="_blank"> Online Coding Platform</a>
 
 > Check out My portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/)
 
