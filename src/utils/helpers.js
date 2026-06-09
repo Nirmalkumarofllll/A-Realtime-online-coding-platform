@@ -3,6 +3,8 @@ import { auth } from "../config/firebase.config";
 import { v4 as uuidv4 } from 'uuid';
 
 const googleProvider = new GoogleAuthProvider();
+googleProvider.addScope('email'); // Request email scope
+
 const githubProvider = new GithubAuthProvider();
 
 export const signINWithGoogle = async () => {

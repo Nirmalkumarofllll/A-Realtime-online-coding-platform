@@ -17,21 +17,25 @@ const Projects = () => {
   }, [projects, searchTerm]);
 
   return (
-    <div className='w-full py-6 flex items-center justify-center gap-6 flex-wrap'>
-      {filteredProjects.length > 0 ? (
-        filteredProjects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
-        ))
-      ) : (
-        <p className='text-primaryText'>No Results found for "{searchTerm}"</p>
-      )}
+    <div className='w-full py-6'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        {filteredProjects.length > 0 ? (
+          filteredProjects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))
+        ) : (
+          <div className="col-span-3 flex items-center justify-center py-12">
+            <p className='text-primaryText text-lg'>No Results found for "{searchTerm}"</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
 const ProjectCard = ({ project, index }) => {
   const [isBookmark, setIsBookmark] = useState(false);
-  const [iframeHeight, setIframeHeight] = useState('375px'); // Default height
+  const [iframeHeight, setIframeHeight] = useState('305px'); // Default height
   const userName = project?.user?.displayName || project?.user?.email.split("@")[0];
 
   useEffect(() => {
@@ -48,17 +52,26 @@ const ProjectCard = ({ project, index }) => {
   }, []);
 
   const toggleBookmark = () => {
-    setIsBookmark(!isBookmark); // Toggle bookmark state
+    setIsBookmark(!isBookmark);
   };
 
   return (
-    <motion.div key={index} className='w-full cursor-pointer md:w-[450px] h-auto bg-secondary rounded-md p-4 flex flex-col items-center justify-center gap-4'>
+    <motion.div 
+      key={index} 
+      className='w-full cursor-pointer h-auto bg-secondary rounded-md p-4 flex flex-col items-center justify-center gap-4'
+    >
       <div className='bg-primary w-full rounded-md' style={{ overflow: 'hidden' }}>
         <iframe
-          title='Result'
-          srcDoc={project.output}
-          style={{ border: 'none', width: '100%', height: iframeHeight }}
-          
+        title='Result'
+        srcDoc={project.output}
+        style={{
+          border: 'none',
+          width: '100%',
+          height: iframeHeight,
+          overflow: 'hidden'
+        }}
+        scrolling="no"
+        sandbox="allow-scripts allow-same-origin"
         />
       </div>
       <div className='flex gap-3 w-full'>
@@ -79,14 +92,14 @@ const ProjectCard = ({ project, index }) => {
           )}
         </div>
         {/* name */}
-        <div>
-          <p className='text-white text-lg capitalize'>{project?.title}</p>
-          <p className='text-primaryText text-sm capitalize'>
+        <div className='flex-1 min-w-0'>
+          <p className='text-white text-lg capitalize truncate'>{project?.title}</p>
+          <p className='text-primaryText text-sm capitalize truncate'>
             {userName}
           </p>
         </div>
         {/* collection */}
-        <motion.div whileTap={{ scale: 0.9 }} onClick={toggleBookmark} className='cursor-pointer ml-auto'>
+        <motion.div whileTap={{ scale: 0.9 }} onClick={toggleBookmark} className='cursor-pointer ml-auto flex-shrink-0'>
           {isBookmark ? <MdBookmark className='text-3xl text-primaryText' /> : <MdBookmarkBorder className='text-primaryText text-3xl' />}
         </motion.div>
       </div>

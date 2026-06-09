@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { HiChevronDoubleLeft } from "react-icons/hi2";
-import { MdHome, MdOutlineEmail, MdWhatsapp } from "react-icons/md";
-import { FaGithub, FaLinkedinIn, FaRegCopyright, FaSearchengin, FaTelegram } from "react-icons/fa6";
+import { MdBackpack, MdBook, MdHome, MdOutlineEmail, MdWhatsapp } from "react-icons/md";
+import { FaGithub,FaCode, FaLinkedinIn, FaRegCopyright, FaSearchengin, FaTelegram } from "react-icons/fa6";
 import { motion } from 'framer-motion';
 import { Link, Routes, Route, useLocation } from 'react-router-dom';
 import { Logo } from '../assets';
-import { Projects, SignUp } from '../container';
+import { Profile, NewProject, Projects, SignUp, Feedback } from '../container';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserProfileDetails } from '../components';
 import { SET_SEARCH_TERM } from '../context/actions/searchActions';
+import { FaBookReader } from 'react-icons/fa';
 
 const Home = () => {
   const [isSideMenu, setIsSideMenu] = useState(false);
@@ -57,50 +58,66 @@ const Home = () => {
             <HiChevronDoubleLeft className="text-white text-xl" />
           </motion.div>
           
-          <div className="overflow-hidden w-full flex flex-col gap-4">
+          <div className="overflow-hidden w-full flex flex-col gap-6 pt-2">
             {/* logo */}
-            <Link to={"/home"}>
-              <img src={Logo} alt="Logo" className="object-contain w-72 h-auto" />
+            <Link
+              to={"/home/projects"} 
+              className='flex items-center gap-3 group hover:opacity-90 transition-all duration-200'
+            >
+              <div className='flex flex-col'>
+                <p className="text-3xl z-50 font-extrabold tracking-tight relative group text-green-400">
+                  C<span className="inline-block animate-bounce text-green-400">O</span>DESYNC
+                    <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-green-400 group-hover:w-full transition-all duration-500"></span>
+                </p>
+                <p className='text-gray-400 text-xs font-medium'>Web Editor</p>
+              </div>
             </Link>
             {/* start coding */}
             <Link to={"/newProject"}>
-              <div className="px-6 py-3 flex items-center justify-center rounded-xl border border-gray-400 cursor-pointer group hover:border-gray-200">
-                <p className="text-gray-400 group-hover:text-gray-200 capitalize text-sm">Start Coding</p>
-              </div>
+              <motion.div 
+                className="px-6 py-4 flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 cursor-pointer group hover:from-green-600 hover:to-emerald-700 transition-all shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FaCode className="text-white text-lg" />
+                <p className="text-white font-semibold text-base">Start Coding</p>
+              </motion.div>
             </Link>
-
-            {/* home nav */}
+            {/* 
             {user && (
-              <Link to={"/home/projects"} className="flex items-center justify-center gap-6">
-                <MdHome className="text-primaryText text-xl" />
-                <p className="text-lg text-primaryText">Home</p>
-              </Link>
-            )}
+              <a href="https://nirmalkumarofllll.github.io/Portfolio/Codepen.html" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-6">
+                <FaBookReader className="text-primaryText text-xl" />
+                <p className="text-lg text-primaryText">Learn</p>
+              </a>
+            )}*/}
           </div>
 
           {/* Social icons */}
-          <div className="flex items-center justify-center gap-4 mt-auto overflow-hidden w-full  ">
-            <motion.div whileTap={{ scale: 0.9 }} onClick={openGmail}>
-              <MdOutlineEmail className='text-rose-500 text-xl cursor-pointer hover:text-rose-400' />
-            </motion.div>
-            <motion.div whileTap={{ scale: 0.9 }} onClick={openWhatsApp}>
-              <MdWhatsapp className='text-green-400 text-xl cursor-pointer hover:text-green-300' />
-            </motion.div>
-            <motion.div whileTap={{ scale: 0.9 }} onClick={openLinkedIn}>
-              <FaLinkedinIn className='text-blue-600 text-xl cursor-pointer hover:text-blue-500' />
-            </motion.div>
-            <motion.div whileTap={{ scale: 0.9 }} onClick={openGitHub}>
-              <FaGithub className='text-gray-400 text-xl cursor-pointer hover:text-gray-100' />
-            </motion.div>
-            <motion.div whileTap={{ scale: 0.9 }} onClick={openTelegram}>
-              <FaTelegram className='text-blue-500 text-xl cursor-pointer hover:text-blue-400' />
-            </motion.div>
-          </div>
+          <div className="mt-auto w-full over overflow-hidden">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              {[
+                { icon: MdOutlineEmail, color: 'rose', action: openGmail },
+                { icon: MdWhatsapp, color: 'green', action: openWhatsApp },
+                { icon: FaLinkedinIn, color: 'blue', action: openLinkedIn },
+                { icon: FaGithub, color: 'gray', action: openGitHub },
+                { icon: FaTelegram, color: 'blue', action: openTelegram }
+              ].map((social, index) => (
+                <motion.div 
+                  key={index}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={social.action}
+                  className={`p-3 bg-gray-700 rounded-lg hover:bg-${social.color}-500 transition-colors cursor-pointer`}
+                >
+                  <social.icon className={`text-${social.color}-400 hover:text-white text-xl transition-colors`} />
+                </motion.div>
+              ))}
+            </div>
 
-          {/* Copyright */}
-          <div className="flex items-center justify-center gap-1 overflow-hidden w-full">
-            <FaRegCopyright className='text-primaryText'/>
-            <p className="text-gray-400 text-sm"> Nirmalkumar</p>
+            {/* Copyright */}
+            <div className="flex items-center justify-center gap-2 text-gray-500 text-sm border-t border-gray-700 pt-4">
+              <FaRegCopyright className='text-gray-500'/>
+              <p>{new Date().getFullYear()} Nirmalkumar</p>
+            </div>
           </div>
         </div>
       )}
@@ -137,6 +154,9 @@ const Home = () => {
           <Routes>
             <Route path="/*" element={<Projects />} />
             <Route path='/auth' element={<SignUp />} />
+            <Route path='/newProject' element={<NewProject />} />
+            <Route path='/profile' element={<Profile />} />
+            <Route path='/feedback' element={<Feedback />} />
           </Routes>
         </div>
       </div>

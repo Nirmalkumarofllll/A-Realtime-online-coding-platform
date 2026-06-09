@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Logo } from '../assets';
+import { Logo, newLogo } from '../assets';
 import { UserAuthInput } from '../components';
 import { FaEnvelope, FaGithub, FaLinkedinIn, FaLock, FaRegCopyright, FaTelegram } from 'react-icons/fa6';
 import { MdOutlineEmail, MdPassword, MdWhatsapp } from 'react-icons/md';
@@ -71,14 +71,17 @@ const SignUp = () => {
     };
 
     return (
-        <div className='w-full py-6 relative'>
-            <img src={Logo}
-                className="object-contain w-32 opacity-50 h-auto"
-                alt=""
-            />
-            <div className='w-full flex flex-col items-center justify-center py-8'>
-                <p className='py-12 text-2xl text-primaryText'>Join With Us!</p>
+        <div className='w-full relative no-scroll'>
+            <div className='w-full flex flex-col items-center justify-center'>
+                <p className=' text-2xl pb-4 text-primaryText'>Join With Us!</p>
                 <div className='px-8 w-full md:w-auto py-4 rounded-xl bg-secondary shadow-md flex flex-col items-center justify-center gap-8'>
+                    <div className='flex flex-col'>
+                        <p className="text-3xl z-50 font-extrabold tracking-tight relative group text-green-400">
+                            C<span className="inline-block animate-bounce text-green-400">O</span>DESYNC
+                            <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-green-400 group-hover:w-full transition-all duration-500"></span>
+                        </p>
+                        <p className='text-gray-400 text-xs font-medium'>Web Editor</p>
+                    </div>
                     {/*email*/}
                     <UserAuthInput
                         label="Email"
@@ -156,7 +159,7 @@ const SignUp = () => {
                 </div>
             </div>
             <div className="absolute bottom-2 left-4  flex flex-col items-center justify-center gap-1">
-                <div className="flex justify-center gap-4">
+             {/*   <div className="flex justify-center gap-4">
                     <motion.div whileTap={{ scale: 0.9 }} onClick={openGmail}>
                         <MdOutlineEmail className='text-rose-500 text-xl cursor-pointer hover:text-rose-400' />
                     </motion.div>
@@ -172,7 +175,7 @@ const SignUp = () => {
                     <motion.div whileTap={{ scale: 0.9 }} onClick={openTelegram}>
                         <FaTelegram className='text-blue-500 text-xl cursor-pointer hover:text-blue-400' />
                     </motion.div>
-                </div>
+                </div>*/}
                 {/* Copyright */}
                 <div className="flex items-center justify-center gap-1 overflow-hidden w-full mt-4">
                     <FaRegCopyright className='text-primaryText' />

@@ -1,0 +1,28 @@
+To run in local:
+yarn start
+
+TO deploy:
+yarn build
+Firebase deploy
+
+Deployed in:
+30-11-25
+nirmal2404620@gmail.com
+nk-codepen-clone
+
+Changes made in:
+NewProject.jsx:
+Improved the UI, added syntax highlighting and clear button option, enhanced the logo
+UserProfileDetails.jsx:
+Enhanced profile size and shape, the logout button removed and added in drop down,Added drop down and the options of projects, feedback and profile options.
+SignUp.jsx:
+Enchanced the logo
+Projects.jsx:
+Improved the alignment from 2 cards in each row to 3 cards in each row.
+Home.jsx:
+Enhaced logo, start coding button and the sidebar, removed learn option
+
+
+New Files Added:
+Feedback.jsx
+Profile.jsx
